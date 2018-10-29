@@ -1,0 +1,24 @@
+* Python
+** venv is less painful than I remember
+** pycache gunk was kind of annoying
+* Flask
+** wow, /hello is EASY
+** /boom is also easy, but I wonder how I can send error messages back to the user
+** for parameterized paths, path vs. string semi-typing seems weird
+** implicit request object is weird
+*** where does this thing come from?
+*** does this mean there's no way I can multithread (or even use Python concurrency?)
+*** looks like it's basically a thread-local, but in Python
+**** the docs acknowledge that this can make testing hard
+** the default return type is html --> echo opens up all kinds of JS injection
+*** interestingly, Chrome blocks this by default
+** specifying the HTTP method via a string just feels wrong
+*** what does it do if I give it a garbage method?
+**** it will happily execute: curl -X GARBAGE localhost:5000/incr works just as well as POST
+** I like that it provides request-scoped and session-scoped storage out of the box
+** it's weird to require environment variables to launch the server
+*** .flaskenv helps with this, but it requires python-dotenv and the filesystem
+*** why can't I use command-line arguments?
+* Docker
+** any setup aside from Docker for Mac is super painful
+** debugging connection errors is really painful
